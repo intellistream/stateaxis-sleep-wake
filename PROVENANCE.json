@@ -9,5 +9,9 @@
   "copied_evidence": "evidence/ISSUE58_SLEEP_WAKE_CLOSURE_20260816.md",
   "copied_evidence_sha256": "03340697ab8d76019b4855e96ead79937a3961b2071636b84df0d3a27d794c01",
   "qualification_inherited": false,
-  "implementation_extracted": false
+  "implementation_extracted": false,
+  "licensing": {
+    "scaffolding": "Apache-2.0",
+    "copied_evidence": "No additional license grant is inferred from this split."
+  }
 }
