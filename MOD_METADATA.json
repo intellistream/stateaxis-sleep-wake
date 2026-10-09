@@ -1,0 +1,44 @@
+{
+  "schema_version": "vllm-hust-mod-metadata-v1",
+  "mod_id": "org.vllm-hust.stateaxis-sleep-wake",
+  "repository": "stateaxis-sleep-wake",
+  "display_name": "stateaxis-sleep-wake",
+  "canonical_repository": "https://github.com/intellistream/stateaxis-sleep-wake",
+  "responsibility": {
+    "organization": "intellistream",
+    "maintainers": [
+      {
+        "name": "Shuhao Zhang (Tony)",
+        "github": "ShuhaoZhangTony"
+      }
+    ],
+    "advisor_status": "not_declared",
+    "advisors": []
+  },
+  "lifecycle": {
+    "status": "experimental",
+    "default_enabled": false,
+    "activation_contract": "Import-only research descriptor; activation is refused until the StateAxis host contract and independent implementation are reviewed.",
+    "rollback_contract": "Disable or forget the descriptor and run the unchanged StateAxis host without this MOD."
+  },
+  "scope": {
+    "mechanism": "identity_verified_sleep_wake",
+    "supported_workloads": [],
+    "out_of_scope": [
+      "general performance claims",
+      "automatic inheritance from StateAxis aggregate evidence"
+    ]
+  },
+  "evidence": {
+    "qualification": "unqualified",
+    "latest_result": "evidence/ISSUE58_SLEEP_WAKE_CLOSURE_20260816.md",
+    "index": "EVIDENCE.md",
+    "performance_claims": [
+      {
+        "label": "inconclusive-tested-cell",
+        "scope": "frozen StateAxis source evidence only",
+        "result": "Idle release reclaimed 51,653 MiB; measured wake p95 was 35.892 seconds, so the mechanism remains default-off."
+      }
+    ]
+  }
+}
