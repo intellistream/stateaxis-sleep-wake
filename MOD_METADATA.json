@@ -18,25 +18,25 @@
   "lifecycle": {
     "status": "experimental",
     "default_enabled": false,
-    "activation_contract": "Import-only research descriptor; activation is refused until the StateAxis host contract and independent implementation are reviewed.",
-    "rollback_contract": "Disable or forget the descriptor and run the unchanged StateAxis host without this MOD."
+    "activation_contract": "Extension Manager verifies RESEARCH_MANIFEST.json and forwards the hash-bound idle-only whole-worker lifecycle contract; StateAxis admits only the exact contract.",
+    "rollback_contract": "Disable the extension; StateAxis keeps the worker awake and exposes no sleep/wake authority."
   },
   "scope": {
     "mechanism": "identity_verified_sleep_wake",
-    "supported_workloads": [],
+    "supported_workloads": ["opt-in idle whole-worker NPU resource release with bounded wake latency"],
     "out_of_scope": [
       "general performance claims",
       "automatic inheritance from StateAxis aggregate evidence"
     ]
   },
   "evidence": {
-    "qualification": "unqualified",
-    "latest_result": "evidence/ISSUE58_SLEEP_WAKE_CLOSURE_20260816.md",
+    "qualification": "historical-real-npu-resource-release-positive-unqualified",
+    "latest_result": "evidence/ecpa-contract-20261011/RESULT.json",
     "index": "EVIDENCE.md",
     "performance_claims": [
       {
-        "label": "inconclusive-tested-cell",
-        "scope": "frozen StateAxis source evidence only",
+        "label": "historical-real-npu-resource-release-positive-unqualified",
+        "scope": "Qwen2.5-14B issue #58 frozen three-pair real-NPU cell",
         "result": "Idle release reclaimed 51,653 MiB; measured wake p95 was 35.892 seconds, so the mechanism remains default-off."
       }
     ]

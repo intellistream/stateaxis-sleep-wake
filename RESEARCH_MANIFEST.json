@@ -1,0 +1,21 @@
+{
+  "schema_version": "stateaxis-research-manifest/v1",
+  "mod_id": "org.vllm-hust.stateaxis-sleep-wake",
+  "mod_version": "0.2.0",
+  "mechanism": {
+    "authority": "whole-worker lifecycle",
+    "idle_only": true,
+    "preconditions": ["zero active states", "zero inflight requests", "zero continuation nodes", "zero host-tier states", "zero automatic-prefix-cache entries"],
+    "sleep": "terminate the complete native worker and release its assembly lease",
+    "wake": "restart the same command and require exact assembly identity and capacity geometry",
+    "failure_policy": "faulted fail-stop"
+  },
+  "host_implementation": "statecentric_engine:parse_sleep_wake_additional_config",
+  "effect_counters": ["sleep_requests", "sleep_applied", "sleep_fallbacks", "wake_requests", "wake_applied", "wake_fallbacks", "faults", "worker_epoch", "last_sleep_ns", "last_wake_ns"],
+  "qualification": {
+    "label": "historical-real-npu-resource-release-positive-unqualified",
+    "performance_qualified": false,
+    "scope": "Qwen2.5-14B issue #58 frozen three-pair cell",
+    "result": "51,653 MiB released in every candidate run; wake p95 35.892 seconds; no inference speedup claim"
+  }
+}

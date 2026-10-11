@@ -1,56 +1,40 @@
 {
   "schema_version": "0.3-experimental",
   "extension_id": "org.vllm-hust.stateaxis-sleep-wake",
-  "extension_version": "0.1.0.dev0",
-  "kind": "in_process_plugin",
-  "host": {
-    "provider": "stateaxis",
-    "name": "stateaxis",
-    "version_range": ">=1,<2",
-    "api_range": ">=1,<2"
-  },
-  "runtime": {
-    "type": "python",
-    "process_scope": "stateaxis-process",
-    "isolation": "trusted_in_process"
-  },
+  "extension_version": "0.2.0",
+  "kind": "control_plane_extension",
+  "host": {"provider": "stateaxis", "name": "stateaxis", "version_range": ">=1,<2", "api_range": ">=1,<2"},
+  "runtime": {"type": "python", "process_scope": "stateaxis-process", "isolation": "trusted_in_process"},
   "lifecycle_owner": "vllm",
-  "protocols": [
-    {
-      "name": "stateaxis.mod-proposal.sleep-wake",
-      "version_range": ">=1,<2"
-    }
-  ],
-  "implementation": [
-    {
-      "type": "python_module",
-      "module": "stateaxis_sleep_wake",
-      "object": "StateaxisSleepWakeContractProposal",
-      "status": "import_only"
-    }
-  ],
+  "protocols": [{"name": "stateaxis.mod-proposal.sleep-wake", "version_range": ">=1,<2"}],
+  "implementation": [{"type": "host_builtin", "symbol": "statecentric_engine:parse_sleep_wake_additional_config", "status": "active"}],
   "requires_services": [],
   "requires_extensions": [],
-  "resource_claims": [],
-  "components": [
-    {
-      "component_id": "stateaxis-sleep-wake",
-      "contracts": [
-        "vllm.stateaxis.mod-proposal.sleep-wake.v1"
-      ],
-      "execution_planes": [
-        "scheduler",
-        "worker",
-        "device"
-      ],
-      "isolation": "trusted_in_process",
-      "implementation_ref": "stateaxis_sleep_wake:StateaxisSleepWakeContractProposal",
-      "permissions": []
-    }
+  "resource_claims": [
+    {"resource": "stateaxis.worker.lifecycle", "scope": "stateaxis-process", "mode": "exclusive"},
+    {"resource": "stateaxis.device.weight-residency", "scope": "stateaxis-process", "mode": "exclusive"}
   ],
+  "components": [{
+    "component_id": "stateaxis-sleep-wake",
+    "contracts": ["vllm.stateaxis.mod-proposal.sleep-wake.v1"],
+    "execution_planes": ["scheduler", "worker", "device"],
+    "isolation": "trusted_in_process",
+    "implementation_ref": "statecentric_engine:parse_sleep_wake_additional_config",
+    "permissions": []
+  }],
   "activation": {
-    "entry_points": [],
+    "entry_points": [{"group": "stateaxis.mod_handlers", "name": "sleep_wake"}],
     "environment": {},
-    "additional_config": {}
+    "additional_config": {
+      "stateaxis_mod": {"mod_id": "org.vllm-hust.stateaxis-sleep-wake", "version": "0.2.0", "manifest_sha256": "b1b2a83ed5816a9fb70ec676a6fc6726da9a615a34ed142327ba058ea0c366c0", "performance_qualified": false},
+      "stateaxis_sleep_wake": {
+        "enabled": true, "idle_only": true, "require_zero_active_states": true,
+        "require_zero_inflight_requests": true, "require_zero_continuations": true,
+        "require_zero_host_tier_states": true, "require_zero_apc_entries": true,
+        "whole_worker_shutdown": true, "exact_assembly_identity_on_wake": true,
+        "exact_capacity_geometry_on_wake": true, "sleeping_requests_fail_unavailable": true,
+        "wake_failure_faults_service": true, "fail_closed": true
+      }
+    }
   }
 }

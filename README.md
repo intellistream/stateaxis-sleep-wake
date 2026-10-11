@@ -2,41 +2,28 @@
 
 Extension ID: `org.vllm-hust.stateaxis-sleep-wake`
 
-Whole-worker sleep/wake with online weight release and identity/geometry validation.
-
-This repository is the independent MOD boundary for StateAxis issues [#58](https://github.com/Qixin-Gaoke/stateaxis/issues/58).
-It is deliberately `import_only`, default-off, and cannot be enabled. The split does
-not inherit correctness, device, performance, or publication qualification from the
-aggregate StateAxis repository.
+Experimental, default-off whole-worker lifecycle MOD. Under explicit ECPA
+authority, StateAxis sleeps only after proving there are no active states,
+requests, continuations, host-tier states, or APC entries. Wake must reproduce
+the exact assembly identity and worker capacity geometry or the service faults
+closed. Direct CLI activation is unsupported.
 
 ## Evidence boundary
 
-Status: **mixed**.
+Historical Qwen2.5-14B real-NPU evidence is positive for **idle resource
+release**: every candidate run released 51,653 MiB. Wake p95 was 35.892 seconds
+and post-wake requests remained exact. This is not an inference speedup or broad
+performance qualification; the MOD remains opt-in and experimental.
 
-Idle release reclaimed 51,653 MiB; measured wake p95 was 35.892 seconds, so the mechanism remains default-off.
-
-The copied evidence and its SHA-256 are recorded in `PROVENANCE.json`. Negative,
-failed, and inconclusive results are retained. Microbenchmarks and component results
-must not be restated as online end-to-end gains.
-
-## Install and inspect
-
-```bash
-python -m pip install .
-vllm-hust-ext extension inspect org.vllm-hust.stateaxis-sleep-wake
-vllm-hust-ext extension check org.vllm-hust.stateaxis-sleep-wake
-```
-
-Discovery does not enable the MOD. A future active revision must extract an
-independently reviewable implementation, declare exclusive resources where needed,
-and pass exactness, lifecycle, release, failure-recovery, and matched real-online
-gates.
-
-## Validate
+Current ECPA evidence covers digest binding, lifecycle counters, repeated exact
+mock-worker sleep/wake, failure recovery, geometry drift rejection and Manager
+launch composition. See `EVIDENCE.md`.
 
 ```bash
 python -m pip install -e '.[test]'
 pytest -q
+VLLM_HUST_EXT_CONFIG=evidence/ecpa-contract-20261011/manager-config.json \
+  vllm-hust-ext extension check org.vllm-hust.stateaxis-sleep-wake
 ```
 
 Maintainer: Shuhao Zhang (Tony), directly responsible; no advisor is declared.

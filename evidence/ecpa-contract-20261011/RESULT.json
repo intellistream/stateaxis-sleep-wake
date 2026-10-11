@@ -1,0 +1,15 @@
+{
+  "schema_version": "stateaxis-mod-on-off/v1",
+  "date_utc": "2026-10-11",
+  "mod_id": "org.vllm-hust.stateaxis-sleep-wake",
+  "mod_version": "0.2.0",
+  "research_manifest_sha256": "b1b2a83ed5816a9fb70ec676a6fc6726da9a615a34ed142327ba058ea0c366c0",
+  "evidence_label": "manager-contract-mock-worker-non-performance",
+  "performance_qualified": false,
+  "hardware_execution": false,
+  "manager": {"check": "passed", "plan": "passed", "dry_run": "passed", "managed_assembly_check_process": "passed", "assembly_identity_sha256": "b93ee897ad4fed3d896ff8dffcd8187ea269065e4895ac147e606c4b2b4a5af6"},
+  "validation": {"python_tests": "3 passed", "rust_sleep_wake_tests": "2 passed", "rust_supervisor_tests": "7 passed", "rust_library_tests": "407 passed", "cargo_check_lib_bins": "passed", "native_state_engine_build": "passed"},
+  "on_effects": {"sleep_applied": 3, "wake_applied": 3, "worker_epoch": 4, "faults": 0, "exact_output_after_each_wake": [21]},
+  "historical_real_npu_result": {"model": "Qwen2.5-14B BF16", "fresh_service_arms": 6, "released_hbm_mib": 51653, "wake_p95_seconds": 35.892, "post_wake_exact": true, "claim": "idle resource release only"},
+  "limitations": ["current activation-contract run uses a CPU mock worker", "no inference speedup claim", "performance remains unqualified"]
+}
