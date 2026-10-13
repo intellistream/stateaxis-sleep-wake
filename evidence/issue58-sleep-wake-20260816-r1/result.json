@@ -1,0 +1,624 @@
+{
+  "candidate_post_wake_request_ns": {
+    "max": 364977766,
+    "min": 363518782,
+    "p50": 363708633,
+    "p95": 364850852
+  },
+  "candidate_released_hbm_mib": {
+    "max": 51653,
+    "min": 51653,
+    "p50": 51653,
+    "p95": 51653
+  },
+  "candidate_sleep_ns": {
+    "max": 4587752808,
+    "min": 3637993861,
+    "p50": 3878284366,
+    "p95": 4516805963
+  },
+  "candidate_wake_ns": {
+    "max": 36059220337,
+    "min": 33592175176,
+    "p50": 34389120486,
+    "p95": 35892210351
+  },
+  "control_post_lifecycle_request_ns": {
+    "max": 299382832,
+    "min": 294659238,
+    "p50": 295371355,
+    "p95": 298981684
+  },
+  "format": "statecentric-issue58-sleep-wake-summary-v1",
+  "issue": 58,
+  "performance_claim": false,
+  "runs": [
+    {
+      "after": {
+        "enabled": false,
+        "expected_geometry": {
+          "hbm_total_bytes": 65452113920,
+          "max_blocks_per_state": 32,
+          "physical_block_tokens": 128,
+          "physical_blocks_total": 320,
+          "state_capacity": 17,
+          "workspace_capacity_bytes": 5905580032
+        },
+        "faults": 0,
+        "last_sleep_ns": null,
+        "last_wake_ns": null,
+        "phase": "awake",
+        "sleep_applied": 0,
+        "sleep_fallbacks": 1,
+        "sleep_requests": 1,
+        "wake_applied": 0,
+        "wake_fallbacks": 1,
+        "wake_requests": 1,
+        "worker_epoch": 1
+      },
+      "arm": "control",
+      "awake_hbm": {
+        "capacity_mib": 65536,
+        "timestamp_ns": 2012765001448254,
+        "used_mib": 55068
+      },
+      "before": {
+        "enabled": false,
+        "expected_geometry": {
+          "hbm_total_bytes": 65452113920,
+          "max_blocks_per_state": 32,
+          "physical_block_tokens": 128,
+          "physical_blocks_total": 320,
+          "state_capacity": 17,
+          "workspace_capacity_bytes": 5905580032
+        },
+        "faults": 0,
+        "last_sleep_ns": null,
+        "last_wake_ns": null,
+        "phase": "awake",
+        "sleep_applied": 0,
+        "sleep_fallbacks": 0,
+        "sleep_requests": 0,
+        "wake_applied": 0,
+        "wake_fallbacks": 0,
+        "wake_requests": 0,
+        "worker_epoch": 1
+      },
+      "dormant_hbm": {
+        "capacity_mib": 65536,
+        "timestamp_ns": 2012767426069402,
+        "used_mib": 55085
+      },
+      "exact": true,
+      "format": "statecentric-issue58-sleep-wake-result-v1",
+      "issue": 58,
+      "lifecycle_exact": true,
+      "oracle_sha256": "bc3aeb6613f4d2cae6701637bc8e2ee65d48fd428c249d52fd411c190751f191",
+      "performance_claim": false,
+      "post_wake_request_wall_ns": 299382832,
+      "prompt_manifest_sha256": "04d5b71feb8dd6bc5d1bc6b827d65b9970f787d7b25558905aca0ca5717bc1ed",
+      "released_hbm_mib": -17,
+      "repetition": 1,
+      "schema_version": 1,
+      "sleep": {
+        "completed_ns": 2012765374993945,
+        "http_status": 200,
+        "request_body_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "response": {
+          "authority_applied": false,
+          "duration_ns": 1080,
+          "fallback_reason": "authority_disabled",
+          "phase": "awake",
+          "worker_epoch": 1
+        },
+        "started_ns": 2012765374328051,
+        "wall_ns": 665894
+      },
+      "speedup_claim": false,
+      "wake": {
+        "completed_ns": 2012767427088454,
+        "http_status": 200,
+        "request_body_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "response": {
+          "authority_applied": false,
+          "duration_ns": 2660,
+          "fallback_reason": "authority_disabled",
+          "phase": "awake",
+          "worker_epoch": 1
+        },
+        "started_ns": 2012767426178485,
+        "wall_ns": 909969
+      }
+    },
+    {
+      "after": {
+        "enabled": true,
+        "expected_geometry": {
+          "hbm_total_bytes": 65452113920,
+          "max_blocks_per_state": 32,
+          "physical_block_tokens": 128,
+          "physical_blocks_total": 320,
+          "state_capacity": 17,
+          "workspace_capacity_bytes": 5905580032
+        },
+        "faults": 0,
+        "last_sleep_ns": 3878284366,
+        "last_wake_ns": 33592175176,
+        "phase": "awake",
+        "sleep_applied": 1,
+        "sleep_fallbacks": 0,
+        "sleep_requests": 1,
+        "wake_applied": 1,
+        "wake_fallbacks": 0,
+        "wake_requests": 1,
+        "worker_epoch": 2
+      },
+      "arm": "candidate",
+      "awake_hbm": {
+        "capacity_mib": 65536,
+        "timestamp_ns": 2012830943493227,
+        "used_mib": 55069
+      },
+      "before": {
+        "enabled": true,
+        "expected_geometry": {
+          "hbm_total_bytes": 65452113920,
+          "max_blocks_per_state": 32,
+          "physical_block_tokens": 128,
+          "physical_blocks_total": 320,
+          "state_capacity": 17,
+          "workspace_capacity_bytes": 5905580032
+        },
+        "faults": 0,
+        "last_sleep_ns": null,
+        "last_wake_ns": null,
+        "phase": "awake",
+        "sleep_applied": 0,
+        "sleep_fallbacks": 0,
+        "sleep_requests": 0,
+        "wake_applied": 0,
+        "wake_fallbacks": 0,
+        "wake_requests": 0,
+        "worker_epoch": 1
+      },
+      "dormant_hbm": {
+        "capacity_mib": 65536,
+        "timestamp_ns": 2012837211092543,
+        "used_mib": 3416
+      },
+      "exact": true,
+      "format": "statecentric-issue58-sleep-wake-result-v1",
+      "issue": 58,
+      "lifecycle_exact": true,
+      "oracle_sha256": "bc3aeb6613f4d2cae6701637bc8e2ee65d48fd428c249d52fd411c190751f191",
+      "performance_claim": false,
+      "post_wake_request_wall_ns": 364977766,
+      "prompt_manifest_sha256": "04d5b71feb8dd6bc5d1bc6b827d65b9970f787d7b25558905aca0ca5717bc1ed",
+      "released_hbm_mib": 51653,
+      "repetition": 1,
+      "schema_version": 1,
+      "sleep": {
+        "completed_ns": 2012835187615592,
+        "http_status": 200,
+        "request_body_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "response": {
+          "authority_applied": true,
+          "duration_ns": 3878284366,
+          "fallback_reason": null,
+          "phase": "sleeping",
+          "worker_epoch": 1
+        },
+        "started_ns": 2012831308727933,
+        "wall_ns": 3878887659
+      },
+      "speedup_claim": false,
+      "wake": {
+        "completed_ns": 2012870804332360,
+        "http_status": 200,
+        "request_body_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "response": {
+          "authority_applied": true,
+          "duration_ns": 33592175176,
+          "fallback_reason": null,
+          "phase": "awake",
+          "worker_epoch": 2
+        },
+        "started_ns": 2012837211192425,
+        "wall_ns": 33593139935
+      }
+    },
+    {
+      "after": {
+        "enabled": true,
+        "expected_geometry": {
+          "hbm_total_bytes": 65452113920,
+          "max_blocks_per_state": 32,
+          "physical_block_tokens": 128,
+          "physical_blocks_total": 320,
+          "state_capacity": 17,
+          "workspace_capacity_bytes": 5905580032
+        },
+        "faults": 0,
+        "last_sleep_ns": 3637993861,
+        "last_wake_ns": 34389120486,
+        "phase": "awake",
+        "sleep_applied": 1,
+        "sleep_fallbacks": 0,
+        "sleep_requests": 1,
+        "wake_applied": 1,
+        "wake_fallbacks": 0,
+        "wake_requests": 1,
+        "worker_epoch": 2
+      },
+      "arm": "candidate",
+      "awake_hbm": {
+        "capacity_mib": 65536,
+        "timestamp_ns": 2012931826358592,
+        "used_mib": 55069
+      },
+      "before": {
+        "enabled": true,
+        "expected_geometry": {
+          "hbm_total_bytes": 65452113920,
+          "max_blocks_per_state": 32,
+          "physical_block_tokens": 128,
+          "physical_blocks_total": 320,
+          "state_capacity": 17,
+          "workspace_capacity_bytes": 5905580032
+        },
+        "faults": 0,
+        "last_sleep_ns": null,
+        "last_wake_ns": null,
+        "phase": "awake",
+        "sleep_applied": 0,
+        "sleep_fallbacks": 0,
+        "sleep_requests": 0,
+        "wake_applied": 0,
+        "wake_fallbacks": 0,
+        "wake_requests": 0,
+        "worker_epoch": 1
+      },
+      "dormant_hbm": {
+        "capacity_mib": 65536,
+        "timestamp_ns": 2012937877628017,
+        "used_mib": 3416
+      },
+      "exact": true,
+      "format": "statecentric-issue58-sleep-wake-result-v1",
+      "issue": 58,
+      "lifecycle_exact": true,
+      "oracle_sha256": "bc3aeb6613f4d2cae6701637bc8e2ee65d48fd428c249d52fd411c190751f191",
+      "performance_claim": false,
+      "post_wake_request_wall_ns": 363518782,
+      "prompt_manifest_sha256": "04d5b71feb8dd6bc5d1bc6b827d65b9970f787d7b25558905aca0ca5717bc1ed",
+      "released_hbm_mib": 51653,
+      "repetition": 2,
+      "schema_version": 1,
+      "sleep": {
+        "completed_ns": 2012935839743451,
+        "http_status": 200,
+        "request_body_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "response": {
+          "authority_applied": true,
+          "duration_ns": 3637993861,
+          "fallback_reason": null,
+          "phase": "sleeping",
+          "worker_epoch": 1
+        },
+        "started_ns": 2012932201044226,
+        "wall_ns": 3638699225
+      },
+      "speedup_claim": false,
+      "wake": {
+        "completed_ns": 2012972267847766,
+        "http_status": 200,
+        "request_body_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "response": {
+          "authority_applied": true,
+          "duration_ns": 34389120486,
+          "fallback_reason": null,
+          "phase": "awake",
+          "worker_epoch": 2
+        },
+        "started_ns": 2012937877734979,
+        "wall_ns": 34390112787
+      }
+    },
+    {
+      "after": {
+        "enabled": false,
+        "expected_geometry": {
+          "hbm_total_bytes": 65452113920,
+          "max_blocks_per_state": 32,
+          "physical_block_tokens": 128,
+          "physical_blocks_total": 320,
+          "state_capacity": 17,
+          "workspace_capacity_bytes": 5905580032
+        },
+        "faults": 0,
+        "last_sleep_ns": null,
+        "last_wake_ns": null,
+        "phase": "awake",
+        "sleep_applied": 0,
+        "sleep_fallbacks": 1,
+        "sleep_requests": 1,
+        "wake_applied": 0,
+        "wake_fallbacks": 1,
+        "wake_requests": 1,
+        "worker_epoch": 1
+      },
+      "arm": "control",
+      "awake_hbm": {
+        "capacity_mib": 65536,
+        "timestamp_ns": 2013035354823137,
+        "used_mib": 55069
+      },
+      "before": {
+        "enabled": false,
+        "expected_geometry": {
+          "hbm_total_bytes": 65452113920,
+          "max_blocks_per_state": 32,
+          "physical_block_tokens": 128,
+          "physical_blocks_total": 320,
+          "state_capacity": 17,
+          "workspace_capacity_bytes": 5905580032
+        },
+        "faults": 0,
+        "last_sleep_ns": null,
+        "last_wake_ns": null,
+        "phase": "awake",
+        "sleep_applied": 0,
+        "sleep_fallbacks": 0,
+        "sleep_requests": 0,
+        "wake_applied": 0,
+        "wake_fallbacks": 0,
+        "wake_requests": 0,
+        "worker_epoch": 1
+      },
+      "dormant_hbm": {
+        "capacity_mib": 65536,
+        "timestamp_ns": 2013037757432876,
+        "used_mib": 55085
+      },
+      "exact": true,
+      "format": "statecentric-issue58-sleep-wake-result-v1",
+      "issue": 58,
+      "lifecycle_exact": true,
+      "oracle_sha256": "bc3aeb6613f4d2cae6701637bc8e2ee65d48fd428c249d52fd411c190751f191",
+      "performance_claim": false,
+      "post_wake_request_wall_ns": 294659238,
+      "prompt_manifest_sha256": "04d5b71feb8dd6bc5d1bc6b827d65b9970f787d7b25558905aca0ca5717bc1ed",
+      "released_hbm_mib": -16,
+      "repetition": 2,
+      "schema_version": 1,
+      "sleep": {
+        "completed_ns": 2013035720638689,
+        "http_status": 200,
+        "request_body_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "response": {
+          "authority_applied": false,
+          "duration_ns": 1350,
+          "fallback_reason": "authority_disabled",
+          "phase": "awake",
+          "worker_epoch": 1
+        },
+        "started_ns": 2013035720135829,
+        "wall_ns": 502860
+      },
+      "speedup_claim": false,
+      "wake": {
+        "completed_ns": 2013037758426766,
+        "http_status": 200,
+        "request_body_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "response": {
+          "authority_applied": false,
+          "duration_ns": 2420,
+          "fallback_reason": "authority_disabled",
+          "phase": "awake",
+          "worker_epoch": 1
+        },
+        "started_ns": 2013037757541098,
+        "wall_ns": 885668
+      }
+    },
+    {
+      "after": {
+        "enabled": false,
+        "expected_geometry": {
+          "hbm_total_bytes": 65452113920,
+          "max_blocks_per_state": 32,
+          "physical_block_tokens": 128,
+          "physical_blocks_total": 320,
+          "state_capacity": 17,
+          "workspace_capacity_bytes": 5905580032
+        },
+        "faults": 0,
+        "last_sleep_ns": null,
+        "last_wake_ns": null,
+        "phase": "awake",
+        "sleep_applied": 0,
+        "sleep_fallbacks": 1,
+        "sleep_requests": 1,
+        "wake_applied": 0,
+        "wake_fallbacks": 1,
+        "wake_requests": 1,
+        "worker_epoch": 1
+      },
+      "arm": "control",
+      "awake_hbm": {
+        "capacity_mib": 65536,
+        "timestamp_ns": 2013101680926896,
+        "used_mib": 55069
+      },
+      "before": {
+        "enabled": false,
+        "expected_geometry": {
+          "hbm_total_bytes": 65452113920,
+          "max_blocks_per_state": 32,
+          "physical_block_tokens": 128,
+          "physical_blocks_total": 320,
+          "state_capacity": 17,
+          "workspace_capacity_bytes": 5905580032
+        },
+        "faults": 0,
+        "last_sleep_ns": null,
+        "last_wake_ns": null,
+        "phase": "awake",
+        "sleep_applied": 0,
+        "sleep_fallbacks": 0,
+        "sleep_requests": 0,
+        "wake_applied": 0,
+        "wake_fallbacks": 0,
+        "wake_requests": 0,
+        "worker_epoch": 1
+      },
+      "dormant_hbm": {
+        "capacity_mib": 65536,
+        "timestamp_ns": 2013104069422952,
+        "used_mib": 55085
+      },
+      "exact": true,
+      "format": "statecentric-issue58-sleep-wake-result-v1",
+      "issue": 58,
+      "lifecycle_exact": true,
+      "oracle_sha256": "bc3aeb6613f4d2cae6701637bc8e2ee65d48fd428c249d52fd411c190751f191",
+      "performance_claim": false,
+      "post_wake_request_wall_ns": 295371355,
+      "prompt_manifest_sha256": "04d5b71feb8dd6bc5d1bc6b827d65b9970f787d7b25558905aca0ca5717bc1ed",
+      "released_hbm_mib": -16,
+      "repetition": 3,
+      "schema_version": 1,
+      "sleep": {
+        "completed_ns": 2013102043136706,
+        "http_status": 200,
+        "request_body_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "response": {
+          "authority_applied": false,
+          "duration_ns": 1100,
+          "fallback_reason": "authority_disabled",
+          "phase": "awake",
+          "worker_epoch": 1
+        },
+        "started_ns": 2013102042638426,
+        "wall_ns": 498280
+      },
+      "speedup_claim": false,
+      "wake": {
+        "completed_ns": 2013104070348831,
+        "http_status": 200,
+        "request_body_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "response": {
+          "authority_applied": false,
+          "duration_ns": 1990,
+          "fallback_reason": "authority_disabled",
+          "phase": "awake",
+          "worker_epoch": 1
+        },
+        "started_ns": 2013104069523424,
+        "wall_ns": 825407
+      }
+    },
+    {
+      "after": {
+        "enabled": true,
+        "expected_geometry": {
+          "hbm_total_bytes": 65452113920,
+          "max_blocks_per_state": 32,
+          "physical_block_tokens": 128,
+          "physical_blocks_total": 320,
+          "state_capacity": 17,
+          "workspace_capacity_bytes": 5905580032
+        },
+        "faults": 0,
+        "last_sleep_ns": 4587752808,
+        "last_wake_ns": 36059220337,
+        "phase": "awake",
+        "sleep_applied": 1,
+        "sleep_fallbacks": 0,
+        "sleep_requests": 1,
+        "wake_applied": 1,
+        "wake_fallbacks": 0,
+        "wake_requests": 1,
+        "worker_epoch": 2
+      },
+      "arm": "candidate",
+      "awake_hbm": {
+        "capacity_mib": 65536,
+        "timestamp_ns": 2013167573730989,
+        "used_mib": 55069
+      },
+      "before": {
+        "enabled": true,
+        "expected_geometry": {
+          "hbm_total_bytes": 65452113920,
+          "max_blocks_per_state": 32,
+          "physical_block_tokens": 128,
+          "physical_blocks_total": 320,
+          "state_capacity": 17,
+          "workspace_capacity_bytes": 5905580032
+        },
+        "faults": 0,
+        "last_sleep_ns": null,
+        "last_wake_ns": null,
+        "phase": "awake",
+        "sleep_applied": 0,
+        "sleep_fallbacks": 0,
+        "sleep_requests": 0,
+        "wake_applied": 0,
+        "wake_fallbacks": 0,
+        "wake_requests": 0,
+        "worker_epoch": 1
+      },
+      "dormant_hbm": {
+        "capacity_mib": 65536,
+        "timestamp_ns": 2013174567512873,
+        "used_mib": 3416
+      },
+      "exact": true,
+      "format": "statecentric-issue58-sleep-wake-result-v1",
+      "issue": 58,
+      "lifecycle_exact": true,
+      "oracle_sha256": "bc3aeb6613f4d2cae6701637bc8e2ee65d48fd428c249d52fd411c190751f191",
+      "performance_claim": false,
+      "post_wake_request_wall_ns": 363708633,
+      "prompt_manifest_sha256": "04d5b71feb8dd6bc5d1bc6b827d65b9970f787d7b25558905aca0ca5717bc1ed",
+      "released_hbm_mib": 51653,
+      "repetition": 3,
+      "schema_version": 1,
+      "sleep": {
+        "completed_ns": 2013172524705197,
+        "http_status": 200,
+        "request_body_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "response": {
+          "authority_applied": true,
+          "duration_ns": 4587752808,
+          "fallback_reason": null,
+          "phase": "sleeping",
+          "worker_epoch": 1
+        },
+        "started_ns": 2013167936202794,
+        "wall_ns": 4588502403
+      },
+      "speedup_claim": false,
+      "wake": {
+        "completed_ns": 2013210627913904,
+        "http_status": 200,
+        "request_body_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "response": {
+          "authority_applied": true,
+          "duration_ns": 36059220337,
+          "fallback_reason": null,
+          "phase": "awake",
+          "worker_epoch": 2
+        },
+        "started_ns": 2013174567623505,
+        "wall_ns": 36060290399
+      }
+    }
+  ],
+  "schema_version": 1,
+  "speedup_claim": false,
+  "status": "positive_resource_release",
+  "version": "issue58-sleep-wake-20260816-r1",
+  "vllm_comparison": false
+}

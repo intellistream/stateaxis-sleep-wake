@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "format": "statecentric-issue58-sleep-wake-preregistration-v1",
+  "issue": 58,
+  "version": "issue58-sleep-wake-20260816-r1",
+  "hypothesis": "An idle, state-empty native server can release the complete worker-owned HBM allocation and wake with identical frozen execution identity and exact output.",
+  "arms": {
+    "control": "sleep/wake authority disabled; matched idle lifecycle calls leave the worker resident",
+    "candidate": "sleep/wake authority enabled; sleep drains only a state-empty worker, exits it, then wake performs the full handshake and geometry gate"
+  },
+  "matched": [
+    "official local .23 image digest",
+    "NPU and dynamic admission rule",
+    "Rust server bundle and C++ worker",
+    "execution config/artifact, packs, prompt and oracle",
+    "request sequence and timing boundaries"
+  ],
+  "runs": {
+    "admission": 1,
+    "formal_fresh_process_per_arm": 3,
+    "order": ["control-r1", "candidate-r1", "candidate-r2", "control-r2", "control-r3", "candidate-r3"]
+  },
+  "gates": {
+    "all_requests_token_exact": true,
+    "all_lifecycle_exact": true,
+    "control_authority_applied": 0,
+    "control_fallback_reason": "authority_disabled",
+    "candidate_sleep_applied_per_run": 1,
+    "candidate_wake_applied_per_run": 1,
+    "candidate_faults": 0,
+    "candidate_worker_epoch_delta": 1,
+    "candidate_min_released_hbm_mib": 50000,
+    "candidate_wake_p95_slo_seconds": 600,
+    "foreign_resources_modified": false
+  },
+  "statistics": [
+    "released HBM min/median/max",
+    "sleep and wake p50/p95/max",
+    "post-lifecycle request latency p50/p95/max",
+    "HBM awake/dormant/rewoken",
+    "run dispersion"
+  ],
+  "claims": {
+    "performance_speedup": false,
+    "vllm_comparison": false,
+    "scope": "single-card Qwen2.5-14B idle whole-worker release and identity-verified wake only"
+  }
+}

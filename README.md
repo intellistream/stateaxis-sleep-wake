@@ -14,6 +14,8 @@ Historical Qwen2.5-14B real-NPU evidence is positive for **idle resource
 release**: every candidate run released 51,653 MiB. Wake p95 was 35.892 seconds
 and post-wake requests remained exact. This is not an inference speedup or broad
 performance qualification; the MOD remains opt-in and experimental.
+The complete formal bundle is vendored under
+`evidence/issue58-sleep-wake-20260816-r1/`.
 
 Current ECPA evidence covers digest binding, lifecycle counters, repeated exact
 mock-worker sleep/wake, failure recovery, geometry drift rejection and Manager
