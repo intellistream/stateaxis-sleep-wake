@@ -1,0 +1,7 @@
+{
+  "completed": true,
+  "foreign_resources_modified": false,
+  "physical_npu": 3,
+  "schema_version": 1,
+  "speedup_claim": false
+}
